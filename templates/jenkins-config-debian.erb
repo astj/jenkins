@@ -12,6 +12,11 @@ NAME=jenkins
 # location of java
 JAVA=<%= node['jenkins']['java'] %>
 
+# Path to search executables in /etc/init.d/jenkins
+<% if node['jenkins']['path'] -%>
+PATH=<%= node['jenkins']['path'] %>
+<% end -%>
+
 # arguments to pass to java
 JAVA_ARGS="<%= node['jenkins']['master']['jvm_options'] %>"
 
